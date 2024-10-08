@@ -3,4 +3,3 @@ if ! type zoxide &> /dev/null; then
 fi
 
 eval "$(zoxide init --cmd cd zsh)"
-alias ..="cd .."
