@@ -1,5 +1,6 @@
 zmodload zsh/datetime
 NEWLINE=$'\n'
+LC_NUMERIC=C
 
 __execution_time_format() {
   local hours=$(printf '%u' $(($1 / 3600)))
@@ -15,7 +16,7 @@ __execution_time_format() {
   fi
 
   local duration=$(echo "${hours}h:${mins}m:${secs}s")
-  echo "${${duration#0h:}#0m:}"
+  echo "%F{${EXECUTION_TIME_PROMPT_COLOR:-yellow}}${${duration#0h:}#0m:}%f"
 }
 
 __execution_time_start() {
