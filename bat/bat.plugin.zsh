@@ -5,5 +5,5 @@ fi
 # Save the original under 'ocat'
 alias ocat="$(which cat)"
 
-alias cat="bat"
+alias cat="bat --color=always"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
