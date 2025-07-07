@@ -1,0 +1,12 @@
+if [[ $# -lt 3 ]]; then
+  echo "Usage: resize image.jpg ratio output.extension"
+  exit 1
+fi
+
+input_image=$1
+ratio=$2
+output_image=$3
+
+magick "$input_image" -resize "${ratio}" "$output_image"
+
+echo "Created: $output_image"
